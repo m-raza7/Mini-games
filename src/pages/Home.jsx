@@ -7,6 +7,7 @@ import {
     Grid3X3,
     ArrowRight,
 } from "lucide-react";
+// import Footer from "../components/Footer";
 
 const games = [
     {
@@ -50,31 +51,19 @@ const Home = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-10">
 
                 {/* Hero Section */}
-                <div className="text-center mb-12">
-                    <div className="flex justify-center items-center gap-4">
-                        <div className=" flex justify-center">
-                            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xl">
-                                <div className="h-2 w-2 rounded-full bg-emerald-400" />
-                                <span className="text-sm text-white/70">
-                                    Created by <span className="font-semibold text-white">Mr Raza</span>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl">
-                            <span className="text-sm text-white/70">
-                                🚀 React Mini Games Collection
-                            </span>
-                        </div>
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 backdrop-blur-xl">
+                        <div className="h-2 w-2 rounded-full bg-emerald-400" />
+                        <span className="text-sm text-white/70">
+                            Created by <span className="font-semibold text-white">Mr Raza</span>
+                        </span>
                     </div>
 
-                    <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-black text-white">
-                        Game Dashboard
-                    </h1>
-
-                    <p className="mt-4 text-base sm:text-lg text-white/60 max-w-2xl mx-auto">
-                        Explore interactive React applications including Todo CRUD,
-                        Coin Flip, Right Wrong Game, and Tic-Tac-Toe style Grid Game.
-                    </p>
+                    <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl">
+                        <span className="text-sm text-white/70">
+                            🚀 React Mini Games Collection
+                        </span>
+                    </div>
                 </div>
 
                 {/* Cards */}
@@ -116,28 +105,7 @@ const Home = () => {
                         );
                     })}
                 </div>
-
-                {/* Footer */}
-                <div className="mt-16 text-center">
-                    <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6">
-                        <h3 className="text-xl font-bold text-white">
-                            Built with React + Tailwind CSS
-                        </h3>
-
-                        <p className="mt-2 text-white/60">
-                            Modern responsive UI optimized for desktop and mobile devices.
-                        </p>
-
-                        <div className="absolute top-6 right-6 z-20">
-                            <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl">
-                                <span className="text-sm text-white/70">
-                                    👨‍💻 Mr Raza
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                {/* <Footer /> */}
             </div>
         </div>
     );

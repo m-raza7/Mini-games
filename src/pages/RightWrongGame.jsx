@@ -83,38 +83,44 @@ export default function RightWrongGame() {
     const question = questions[current];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center p-6">
-            <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8">
+        <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center p-3 sm:p-6">
+            <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-5 sm:p-8">
 
-                <div className="flex justify-between mb-8">
-                    <span className="font-bold text-lg">
+                {/* Header */}
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-3 mb-8">
+
+                    <span className="font-bold text-lg sm:text-xl">
                         Question {current + 1}/{questions.length}
                     </span>
 
-                    <span className="font-bold text-lg text-purple-600">
+                    <span className="font-bold text-lg sm:text-xl text-purple-600">
                         Score: {score}
                     </span>
+
                 </div>
 
+                {/* Question */}
                 <div
-                    className={`rounded-3xl p-10 text-center mb-8 transition-all
-          ${feedback === "correct"
+                    className={`rounded-3xl p-6 sm:p-10 text-center mb-8 transition-all
+            ${feedback === "correct"
                             ? "bg-green-100 border-4 border-green-500"
                             : feedback === "wrong"
                                 ? "bg-red-100 border-4 border-red-500"
                                 : "bg-gradient-to-r from-indigo-100 to-pink-100"
                         }`}
                 >
-                    <h2 className="text-3xl font-bold">
+                    <h2 className="text-2xl sm:text-3xl font-bold break-words">
                         {question.question}
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                {/* Buttons */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
                     <button
                         onClick={() => handleAnswer(true)}
                         disabled={feedback}
-                        className="bg-green-500 hover:bg-green-600 text-white py-5 rounded-2xl text-2xl font-bold"
+                        className="bg-green-500 hover:bg-green-600 text-white py-4 sm:py-5 rounded-2xl text-xl sm:text-2xl font-bold transition"
                     >
                         ✅ Right
                     </button>
@@ -122,23 +128,26 @@ export default function RightWrongGame() {
                     <button
                         onClick={() => handleAnswer(false)}
                         disabled={feedback}
-                        className="bg-red-500 hover:bg-red-600 text-white py-5 rounded-2xl text-2xl font-bold"
+                        className="bg-red-500 hover:bg-red-600 text-white py-4 sm:py-5 rounded-2xl text-xl sm:text-2xl font-bold transition"
                     >
                         ❌ Wrong
                     </button>
+
                 </div>
 
+                {/* Feedback */}
                 {feedback === "correct" && (
-                    <div className="mt-6 text-center text-green-600 text-3xl font-bold animate-bounce">
+                    <div className="mt-6 text-center text-green-600 text-2xl sm:text-3xl font-bold animate-bounce">
                         🎉 Correct!
                     </div>
                 )}
 
                 {feedback === "wrong" && (
-                    <div className="mt-6 text-center text-red-600 text-3xl font-bold animate-bounce">
+                    <div className="mt-6 text-center text-red-600 text-2xl sm:text-3xl font-bold animate-bounce">
                         😢 Wrong!
                     </div>
                 )}
+
             </div>
         </div>
     );

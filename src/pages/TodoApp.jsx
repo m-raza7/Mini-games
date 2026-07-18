@@ -88,13 +88,16 @@ export default function TodoApp() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 p-6">
-            <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-8">
-                <h1 className="text-4xl font-bold text-center mb-8">
+        <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 p-3 sm:p-6">
+            <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-4 sm:p-8">
+
+                {/* Heading */}
+                <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8">
                     ✨ Todo CRUD App
                 </h1>
 
-                <div className="flex gap-3 mb-8">
+                {/* Input */}
+                <div className="flex flex-col sm:flex-row gap-3 mb-8">
                     <input
                         type="text"
                         value={input}
@@ -103,107 +106,125 @@ export default function TodoApp() {
                         onKeyDown={(e) => {
                             if (e.key === "Enter") addTodo();
                         }}
-                        className="flex-1 border-2 border-purple-300 rounded-xl px-4 py-3 outline-none focus:border-purple-500"
+                        className="w-full flex-1 border-2 border-purple-300 rounded-xl px-4 py-3 outline-none focus:border-purple-500"
                     />
 
                     <button
                         onClick={addTodo}
-                        className={`px-6 py-3 rounded-xl text-white font-semibold ${editId
-                            ? "bg-yellow-500 hover:bg-yellow-600"
-                            : "bg-purple-600 hover:bg-purple-700"
+                        className={`w-full sm:w-auto px-6 py-3 rounded-xl text-white font-semibold transition ${editId
+                                ? "bg-yellow-500 hover:bg-yellow-600"
+                                : "bg-purple-600 hover:bg-purple-700"
                             }`}
                     >
                         {editId ? "Update" : "Add"}
                     </button>
                 </div>
 
-                <div className="flex flex-wrap gap-4 mb-8">
-                    <div className="bg-blue-100 px-5 py-3 rounded-xl">
+                {/* Stats */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                    <div className="bg-blue-100 rounded-xl p-4 text-center font-medium">
                         Total: {todos.length}
                     </div>
 
-                    <div className="bg-green-100 px-5 py-3 rounded-xl">
+                    <div className="bg-green-100 rounded-xl p-4 text-center font-medium">
                         Completed: {todos.filter((t) => t.completed).length}
                     </div>
 
-                    <div className="bg-red-100 px-5 py-3 rounded-xl">
+                    <div className="bg-red-100 rounded-xl p-4 text-center font-medium">
                         Pending: {todos.filter((t) => !t.completed).length}
                     </div>
                 </div>
 
-                <div className="flex gap-3 mb-6">
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 mb-6">
                     <button
                         onClick={clearCompleted}
-                        className="bg-orange-500 text-white px-4 py-2 rounded-lg"
+                        className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-lg transition"
                     >
                         Clear Completed
                     </button>
 
                     <button
                         onClick={clearAll}
-                        className="bg-red-600 text-white px-4 py-2 rounded-lg"
+                        className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-lg transition"
                     >
                         Clear All
                     </button>
                 </div>
 
+                {/* Todo List */}
                 <div className="space-y-4">
+
                     {todos.length === 0 ? (
-                        <div className="text-center py-10 text-gray-400 text-xl">
+                        <div className="text-center py-10 text-gray-400 text-lg sm:text-xl">
                             No Todos Found 🚀
                         </div>
                     ) : (
                         todos.map((todo) => (
                             <div
                                 key={todo.id}
-                                className={`flex items-center justify-between p-4 rounded-2xl shadow-md ${todo.completed
-                                    ? "bg-green-100 border-l-4 border-green-500"
-                                    : "bg-gray-50 border-l-4 border-purple-500"
+                                className={`p-4 rounded-2xl shadow-md border-l-4 ${todo.completed
+                                        ? "bg-green-100 border-green-500"
+                                        : "bg-gray-50 border-purple-500"
                                     }`}
                             >
-                                <div className="flex items-center gap-3">
-                                    <input
-                                        type="checkbox"
-                                        checked={todo.completed}
-                                        onChange={() => toggleComplete(todo.id)}
-                                        className="w-5 h-5"
-                                    />
+                                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
 
-                                    <div>
-                                        <p
-                                            className={`font-medium ${todo.completed
-                                                ? "line-through text-gray-500"
-                                                : ""
-                                                }`}
-                                        >
-                                            {todo.text}
-                                        </p>
+                                    {/* Left */}
+                                    <div className="flex items-start gap-3 flex-1 min-w-0">
 
-                                        <p className="text-xs text-gray-500">
-                                            {new Date(todo.createdAt).toLocaleString()}
-                                        </p>
+                                        <input
+                                            type="checkbox"
+                                            checked={todo.completed}
+                                            onChange={() => toggleComplete(todo.id)}
+                                            className="w-5 h-5 mt-1 shrink-0"
+                                        />
+
+                                        <div className="min-w-0">
+
+                                            <p
+                                                className={`font-medium break-words ${todo.completed
+                                                        ? "line-through text-gray-500"
+                                                        : ""
+                                                    }`}
+                                            >
+                                                {todo.text}
+                                            </p>
+
+                                            <p className="text-xs text-gray-500 break-all">
+                                                {new Date(todo.createdAt).toLocaleString()}
+                                            </p>
+
+                                        </div>
+
                                     </div>
-                                </div>
 
-                                <div className="flex gap-2">
-                                    <button
-                                        onClick={() => editTodo(todo)}
-                                        className="bg-yellow-500 text-white px-4 py-2 rounded-lg"
-                                    >
-                                        Edit
-                                    </button>
+                                    {/* Right */}
+                                    <div className="flex gap-2 w-full sm:w-auto">
 
-                                    <button
-                                        onClick={() => deleteTodo(todo.id)}
-                                        className="bg-red-500 text-white px-4 py-2 rounded-lg"
-                                    >
-                                        Delete
-                                    </button>
+                                        <button
+                                            onClick={() => editTodo(todo)}
+                                            className="flex-1 sm:flex-none bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg transition"
+                                        >
+                                            Edit
+                                        </button>
+
+                                        <button
+                                            onClick={() => deleteTodo(todo.id)}
+                                            className="flex-1 sm:flex-none bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
+                                        >
+                                            Delete
+                                        </button>
+
+                                    </div>
+
                                 </div>
                             </div>
                         ))
                     )}
+
                 </div>
+
             </div>
         </div>
     );

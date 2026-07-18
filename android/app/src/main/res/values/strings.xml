@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Mini Games</string>
+    <string name="title_activity_main">Mini Games</string>
+    <string name="package_name">com.mrreact.minigames</string>
+    <string name="custom_url_scheme">com.mrreact.minigames</string>
+</resources>
