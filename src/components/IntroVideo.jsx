@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const IntroVideo = ({ onFinish }) => {
+    const [videoReady, setVideoReady] = useState(false);
     const videoRef = useRef(null);
 
     useEffect(() => {
@@ -21,12 +22,19 @@ const IntroVideo = ({ onFinish }) => {
         <div className="fixed inset-0 z-[999999] bg-black flex items-center justify-center overflow-hidden">
             <video
                 ref={videoRef}
+                preload="auto"
                 autoPlay
                 muted
                 playsInline
                 controls={false}
                 disablePictureInPicture
                 controlsList="nodownload noplaybackrate nofullscreen"
+                style={{
+                    opacity: videoReady ? 1 : 0,
+                    transition: "opacity .4s"
+                }}
+                onCanPlayThrough={() => setVideoReady(true)}
+
                 onEnded={onFinish}
                 className="max-w-full max-h-full w-auto h-auto"
             >
@@ -38,3 +46,6 @@ const IntroVideo = ({ onFinish }) => {
 
 
 export default IntroVideo;
+
+
+
