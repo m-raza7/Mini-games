@@ -83,7 +83,7 @@ export default function RightWrongGame() {
     const question = questions[current];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center p-3 sm:p-6">
+        <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center p-3 sm:p-6 ">
             <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-5 sm:p-8">
 
                 {/* Header */}

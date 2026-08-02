@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+
+  60% {
+    width: 75%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

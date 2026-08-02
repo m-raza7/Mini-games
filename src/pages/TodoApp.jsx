@@ -88,7 +88,7 @@ export default function TodoApp() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 p-3 sm:p-6">
+        <div className="min-h-screen bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 pt-14 p-3 sm:p-6  lg:pt-23">
             <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-4 sm:p-8">
 
                 {/* Heading */}
@@ -112,8 +112,8 @@ export default function TodoApp() {
                     <button
                         onClick={addTodo}
                         className={`w-full sm:w-auto px-6 py-3 rounded-xl text-white font-semibold transition ${editId
-                                ? "bg-yellow-500 hover:bg-yellow-600"
-                                : "bg-purple-600 hover:bg-purple-700"
+                            ? "bg-yellow-500 hover:bg-yellow-600"
+                            : "bg-purple-600 hover:bg-purple-700"
                             }`}
                     >
                         {editId ? "Update" : "Add"}
@@ -164,8 +164,8 @@ export default function TodoApp() {
                             <div
                                 key={todo.id}
                                 className={`p-4 rounded-2xl shadow-md border-l-4 ${todo.completed
-                                        ? "bg-green-100 border-green-500"
-                                        : "bg-gray-50 border-purple-500"
+                                    ? "bg-green-100 border-green-500"
+                                    : "bg-gray-50 border-purple-500"
                                     }`}
                             >
                                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
@@ -184,8 +184,8 @@ export default function TodoApp() {
 
                                             <p
                                                 className={`font-medium break-words ${todo.completed
-                                                        ? "line-through text-gray-500"
-                                                        : ""
+                                                    ? "line-through text-gray-500"
+                                                    : ""
                                                     }`}
                                             >
                                                 {todo.text}

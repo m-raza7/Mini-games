@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import AppLoader from "./components/AppLoader";
 import IntroVideo from "./components/IntroVideo";
 
 import Home from "./pages/Home";
@@ -11,6 +12,7 @@ import FlipCoinApp from "./pages/FlipCoinApp";
 import RightWrongGame from "./pages/RightWrongGame";
 import RightWrongGrid from "./pages/RightWrongGrid";
 import TermsConditions from "./pages/TermsConditions";
+import ExpenseTracker from "./pages/ExpenseTracker/ExpenseTracker";
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(false);
@@ -25,18 +27,22 @@ const App = () => {
     }
 
     setShowIntro(true);
-    setLoading(false);
+
+    const timer = setTimeout(() => {
+      sessionStorage.setItem("introPlayed", "true");
+      setShowIntro(false);
+      setLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  const handleVideoEnd = () => {
-    sessionStorage.setItem("introPlayed", "true");
-    setShowIntro(false);
-  };
-
-  if (loading) return null;
+  if (loading && !showIntro) {
+    return null;
+  }
 
   if (showIntro) {
-    return <IntroVideo onFinish={handleVideoEnd} />;
+    return <AppLoader />;
   }
 
   return (
@@ -50,9 +56,10 @@ const App = () => {
         <Route path="/right-wrong" element={<RightWrongGame />} />
         <Route path="/right-wrong-grid" element={<RightWrongGrid />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/expense-tracker" element={<ExpenseTracker />} />
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 };

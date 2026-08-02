@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
 
                     <p className="mt-4 max-w-2xl mx-auto text-white/70">
                         Your privacy is important to us. This Privacy Policy explains
-                        how Mini Games collects, uses, and protects your information
+                        how Mini Verse collects, uses, and protects your information
                         when you use our application.
                     </p>
                 </div>
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
                         </h2>
 
                         <p>
-                            Mini Games is designed to provide an enjoyable experience
+                            Mini Verse is designed to provide an enjoyable experience
                             without collecting unnecessary personal information.
                             Depending on the features you use, we may temporarily store
                             application data such as game progress or settings on your
@@ -91,7 +91,7 @@ const PrivacyPolicy = () => {
                         </h2>
 
                         <p>
-                            Mini Games does not knowingly collect personal
+                            Mini Verse does not knowingly collect personal
                             information from children. If you believe that a child
                             has provided personal information, please contact us so
                             appropriate action can be taken.

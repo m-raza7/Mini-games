@@ -13,7 +13,7 @@ const TermsConditions = () => {
 
                     <p className="mt-4 text-white/70 max-w-2xl mx-auto">
                         Please read these Terms & Conditions carefully before using
-                        the Mini Games application.
+                        the Mini Verse application.
                     </p>
                 </div>
 
@@ -25,7 +25,7 @@ const TermsConditions = () => {
                         </h2>
 
                         <p>
-                            By accessing or using Mini Games, you agree to comply
+                            By accessing or using Mini Verse, you agree to comply
                             with these Terms & Conditions. If you do not agree with
                             any part of these terms, please discontinue using the
                             application.

@@ -75,7 +75,7 @@ export default function RightWrongGame() {
         board.every((cell) => cell !== null);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-violet-600 via-pink-500 to-orange-400 flex items-center justify-center p-3 sm:p-5">
+        <div className="min-h-screen bg-gradient-to-br from-violet-600 via-pink-500 to-orange-400 flex items-center justify-center pt-14 p-3 sm:p-5 lg:pt-23">
             <div className="bg-white rounded-3xl shadow-2xl p-5 sm:p-8 w-full max-w-md sm:max-w-lg">
 
                 {/* Heading */}

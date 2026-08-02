@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.mrreact.minigames"
+    namespace = "com.mrreact.miniVerse"
     compileSdk = rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.mrreact.minigames"
+        applicationId "com.mrreact.miniVerse"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
 
         // Increase these for every update
-        versionCode 3
-        versionName "1.2"
+        versionCode 5
+        versionName "1.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

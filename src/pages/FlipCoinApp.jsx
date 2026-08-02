@@ -35,7 +35,7 @@ export default function FlipCoinApp() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center p-3 sm:p-6">
+        <div className="min-h-screen bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 flex items-center justify-center pt-14 p-3 sm:p-6 lg:pt-23">
             <div className="w-full max-w-lg bg-white/95 backdrop-blur rounded-3xl shadow-2xl p-5 sm:p-8">
 
                 {/* Heading */}

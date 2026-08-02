@@ -15,10 +15,11 @@
     "@capacitor/core": "^8.4.2",
     "@tailwindcss/vite": "^4.3.2",
     "axios": "^1.18.1",
-    "lucide-react": "^1.24.0",
+    "lucide-react": "^1.28.0",
     "react": "^19.2.7",
     "react-confetti": "^6.4.0",
     "react-dom": "^19.2.7",
+    "react-icons": "^5.7.0",
     "react-router-dom": "^7.18.1",
     "tailwindcss": "^4.3.2"
   },

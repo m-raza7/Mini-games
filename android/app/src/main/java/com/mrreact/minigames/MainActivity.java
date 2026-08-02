@@ -1,4 +1,4 @@
-package com.mrreact.minigames;
+package com.mrreact.miniVerse;
 
 import com.getcapacitor.BridgeActivity;
 
