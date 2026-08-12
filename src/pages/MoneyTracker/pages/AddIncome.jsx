@@ -103,7 +103,7 @@ const AddIncome = () => {
                 {/* Back Button */}
                 {/* ================================= */}
 
-                <button
+                {/* <button
                     type="button"
                     onClick={() =>
                         navigate("/money-tracker")
@@ -129,15 +129,43 @@ const AddIncome = () => {
                     <ArrowLeft size={17} />
 
                     Back to Money Tracker
-                </button>
+                </button> */}
 
                 {/* ================================= */}
                 {/* Header */}
                 {/* ================================= */}
 
                 <div className="mb-6">
+                    <div className="flex justify-between items-center">
+                        <button
+                            type="button"
+                            onClick={() =>
+                                navigate("/money-tracker")
+                            }
+                            className="
+                        mb-6
+                        flex
+                        items-center
+                        gap-2
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-white/5
+                        px-3
+                        py-2
+                        text-sm
+                        text-white/60
+                        transition
+                        hover:bg-white/10
+                        hover:text-white
+                    "
+                        >
+                            <ArrowLeft size={17} />
 
-                    <div className="
+                            Back To Money Tracker
+                        </button>
+
+                        <div className="
                         mb-3
                         flex
                         h-12
@@ -149,14 +177,16 @@ const AddIncome = () => {
                         border-emerald-400/20
                         bg-emerald-500/10
                     ">
-                        <Wallet
-                            className="
+                            <Wallet
+                                className="
                                 h-6
                                 w-6
                                 text-emerald-400
                             "
-                        />
+                            />
+                        </div>
                     </div>
+
 
                     <h1 className="
                         text-2xl

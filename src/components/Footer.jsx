@@ -10,6 +10,7 @@ import {
     Shield,
     Star,
     Mail,
+    FileText,
 } from "lucide-react";
 
 const Footer = () => {
@@ -103,8 +104,9 @@ const Footer = () => {
 
                             <Link
                                 to="/terms-conditions"
-                                className="hover:text-violet-400 transition"
+                                className="hover:text-violet-400 transition flex items-center gap-2"
                             >
+                                <FileText size={18} />
                                 Terms
                             </Link>
 

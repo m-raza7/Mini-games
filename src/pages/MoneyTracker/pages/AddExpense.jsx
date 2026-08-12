@@ -111,7 +111,7 @@ const AddExpense = () => {
                 {/* Back Button */}
                 {/* ================================= */}
 
-                <button
+                {/* <button
                     type="button"
                     onClick={() =>
                         navigate("/money-tracker")
@@ -136,16 +136,45 @@ const AddExpense = () => {
                 >
                     <ArrowLeft size={17} />
 
-                    Back to Money Tracker
-                </button>
+                    Back
+                </button> */}
 
                 {/* ================================= */}
                 {/* Header */}
                 {/* ================================= */}
 
                 <div className="mb-6">
-                    <div
-                        className="
+                    <div className="flex justify-between items-center">
+                        <button
+                            type="button"
+                            onClick={() =>
+                                navigate("/money-tracker")
+                            }
+                            className="
+                        mb-6
+                        flex
+                        items-center
+                        gap-2
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-white/5
+                        px-3
+                        py-2
+                        text-sm
+                        text-white/60
+                        transition
+                        hover:bg-white/10
+                        hover:text-white
+                    "
+                        >
+                            <ArrowLeft size={17} />
+
+                            Back To Money Tracker
+                        </button>
+
+                        <div
+                            className="
                             mb-3
                             flex
                             h-12
@@ -157,14 +186,15 @@ const AddExpense = () => {
                             border-red-400/20
                             bg-red-500/10
                         "
-                    >
-                        <WalletCards
-                            className="
+                        >
+                            <WalletCards
+                                className="
                                 h-6
                                 w-6
                                 text-red-400
                             "
-                        />
+                            />
+                        </div>
                     </div>
 
                     <h1
