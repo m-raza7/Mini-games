@@ -10,6 +10,7 @@ const navLinks = [
     { name: "Q & A Game", path: "/right-wrong" },
     { name: "Grid Game", path: "/right-wrong-grid" },
     { name: "Expense Tracker", path: "/expense-tracker" },
+    { name: "Money Tracker", path: "/money-tracker" },
 ];
 
 const Navbar = () => {

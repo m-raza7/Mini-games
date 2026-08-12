@@ -28,11 +28,51 @@ const Footer = () => {
 
                         <div className="flex items-center gap-3">
 
-                            <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center text-2xl">
-                                🎮
+                            <div className="
+    flex
+    items-center
+    justify-center
+    shrink-0
+    overflow-hidden
+    rounded-2xl
+    border
+    border-violet-400/20
+    bg-slate-950/80
+    shadow-lg
+    shadow-violet-500/10
+    backdrop-blur-xl
+
+    h-12
+    w-12
+
+    sm:h-13
+    sm:w-13
+
+    md:h-14
+    md:w-14
+
+    lg:h-15
+    lg:w-15
+
+    xl:h-16
+    xl:w-16
+">
+                                <img
+                                    src="/logo.png"
+                                    alt="MiniVerse"
+                                    className="
+            h-full
+            w-full
+            object-contain
+            p-1
+            sm:p-1.5
+            md:p-1.5
+        "
+                                />
                             </div>
 
                             <div>
+
 
                                 <h2 className="text-3xl font-black text-white">
                                     Mini
@@ -54,7 +94,7 @@ const Footer = () => {
                         <div className="flex items-center gap-8 text-gray-300">
 
                             <Link
-                                to="/privacy"
+                                to="/policy"
                                 className="hover:text-violet-400 transition flex items-center gap-2"
                             >
                                 <Shield size={18} />
@@ -68,13 +108,13 @@ const Footer = () => {
                                 Terms
                             </Link>
 
-                            <Link
-                                to="/contact"
+                            <a
+                                href="https://portfolio-frontend-sand-delta.vercel.app/"
                                 className="hover:text-violet-400 transition flex items-center gap-2"
                             >
                                 <Mail size={18} />
                                 Contact
-                            </Link>
+                            </a>
 
                             <a
                                 href="#"
@@ -128,8 +168,47 @@ const Footer = () => {
 
                         <div className="flex justify-center mb-3">
 
-                            <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center text-2xl">
-                                🎮
+                            <div className="
+    flex
+    items-center
+    justify-center
+    shrink-0
+    overflow-hidden
+    rounded-2xl
+    border
+    border-violet-400/20
+    bg-slate-950/80
+    shadow-lg
+    shadow-violet-500/10
+    backdrop-blur-xl
+
+    h-12
+    w-12
+
+    sm:h-13
+    sm:w-13
+
+    md:h-14
+    md:w-14
+
+    lg:h-15
+    lg:w-15
+
+    xl:h-16
+    xl:w-16
+">
+                                <img
+                                    src="/logo.png"
+                                    alt="MiniVerse"
+                                    className="
+            h-full
+            w-full
+            object-contain
+            p-1
+            sm:p-1.5
+            md:p-1.5
+        "
+                                />
                             </div>
 
                         </div>
@@ -150,7 +229,7 @@ const Footer = () => {
                         <div className="flex flex-wrap justify-center gap-3 mt-6">
 
                             <Link
-                                to="/privacy"
+                                to="/policy"
                                 className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300"
                             >
                                 Privacy
@@ -163,12 +242,15 @@ const Footer = () => {
                                 Terms
                             </Link>
 
-                            <Link
-                                to="/contact"
+                            {/* <a
+                                href="https://portfolio-frontend-sand-delta.vercel.app/"
                                 className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300"
                             >
                                 Contact
-                            </Link>
+                            </a> */}
+                            <a href="https://portfolio-frontend-sand-delta.vercel.app/" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300">
+                                Contact
+                            </a>
 
                         </div>
 
@@ -196,9 +278,9 @@ const Footer = () => {
                                 . All Rights Reserved.
                             </p>
 
-                            <p className="text-xs text-gray-500 mt-2">
+                            {/* <p className="text-xs text-gray-500 mt-2">
                                 Built with ❤️ using React & Tailwind CSS
-                            </p>
+                            </p> */}
 
                         </div>
 

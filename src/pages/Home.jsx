@@ -13,8 +13,9 @@ import {
     Zap,
 } from "lucide-react";
 
-import bgdesktop from "../assets/bg-desktop.png";
-import mobileBg from "../assets/bg-mobile.png";
+// import bgdesktop from "../assets/bg-desktop.png";
+// import mobileBg from "../assets/bg-mobile.png";
+import newBg from "../assets/new-bg.png";
 // import phoneMockup from "../assets/mobile-preview.png";
 import Footer from "../components/Footer";
 
@@ -34,11 +35,11 @@ const games = [
         color: "from-green-500 to-emerald-500",
     },
     {
-        title: "Flip Coin",
-        description: "Test your luck instantly.",
-        path: "/flip-coin",
-        icon: Coins,
-        color: "from-purple-500 to-pink-500",
+        title: "Money Manager",
+        description: "Manage income, expenses & savings.",
+        path: "/money-tracker",
+        icon: IndianRupee,
+        color: "from-emerald-500 to-green-500",
     },
     {
         title: "Q & A Game",
@@ -46,6 +47,13 @@ const games = [
         path: "/right-wrong",
         icon: Trophy,
         color: "from-orange-500 to-yellow-500",
+    },
+    {
+        title: "Flip Coin",
+        description: "Test your luck instantly.",
+        path: "/flip-coin",
+        icon: Coins,
+        color: "from-purple-500 to-pink-500",
     },
     {
         title: "Right Wrong",
@@ -79,15 +87,25 @@ export default function Home() {
     return (
         <div className="relative min-h-screen overflow-hidden">
 
-            {/* Background */}
+            {/* Desktop Background */}
             <div
                 className="absolute inset-0 hidden md:block bg-cover bg-center"
-                style={{ backgroundImage: `url(${bgdesktop})` }}
+                style={{ backgroundImage: `url(${newBg})` }}
             />
 
+            {/* Mobile Background */}
             <div
-                className="absolute inset-0 md:hidden bg-cover bg-center"
-                style={{ backgroundImage: `url(${mobileBg})` }}
+                className="
+        absolute
+        inset-0
+        bg-cover
+        bg-center
+        bg-no-repeat
+        md:hidden
+    "
+                style={{
+                    backgroundImage: `url(${newBg})`,
+                }}
             />
 
             <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
@@ -144,7 +162,7 @@ export default function Home() {
 
                 {/* Content */}
 
-                <div className="mt-16 flex flex-col lg:flex-row gap-10">
+                <div className="relative z-10 max-w-7xl mx-auto px-5 py-12">
 
                     {/* Cards */}
 

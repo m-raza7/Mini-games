@@ -12,7 +12,12 @@ import FlipCoinApp from "./pages/FlipCoinApp";
 import RightWrongGame from "./pages/RightWrongGame";
 import RightWrongGrid from "./pages/RightWrongGrid";
 import TermsConditions from "./pages/TermsConditions";
+import Policy from "./pages/Policy";
+
 import ExpenseTracker from "./pages/ExpenseTracker/ExpenseTracker";
+
+// Money Tracker
+import MoneyTracker from "./pages/MoneyTracker/MoneyTracker";
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(false);
@@ -56,7 +61,19 @@ const App = () => {
         <Route path="/right-wrong" element={<RightWrongGame />} />
         <Route path="/right-wrong-grid" element={<RightWrongGrid />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
-        <Route path="/expense-tracker" element={<ExpenseTracker />} />
+        <Route path="/policy" element={<Policy />} />
+        {/* OLD Expense Tracker */}
+        <Route
+          path="/expense-tracker"
+          element={<ExpenseTracker />}
+        />
+
+        {/* NEW Money Tracker */}
+
+        <Route
+          path="/money-tracker/*"
+          element={<MoneyTracker />}
+        />
       </Routes>
 
       {/* <Footer /> */}
