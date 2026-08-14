@@ -1,153 +1,293 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, User, X } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const navLinks = [
     { name: "Home", path: "/" },
     { name: "Todo", path: "/todos" },
-    { name: "Flip Coin", path: "/flip-coin" },
-    { name: "Q & A Game", path: "/right-wrong" },
-    { name: "Grid Game", path: "/right-wrong-grid" },
     { name: "Expense Tracker", path: "/expense-tracker" },
     { name: "Money Tracker", path: "/money-tracker" },
+    { name: "Money Recovery", path: "/money-recovery-tracker" },
+    { name: "Q & A Game", path: "/right-wrong" },
+    { name: "Flip Coin", path: "/flip-coin" },
+    { name: "Grid Game", path: "/right-wrong-grid" },
 ];
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 md:top-4 left-0 right-0 z-50 px-4 md:px-4">
-            <div className="max-w-7xl mx-auto">
+        <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 md:top-4 md:pt-0">
+            <div className="mx-auto max-w-7xl">
 
-                {/* <div
-                    className="
-    flex items-center justify-between h-16 px-2
-
-    px-6
-    rounded-3xl
-    border border-white/10
-    bg-black/20
-    backdrop-blur-2xl
-    shadow-2xl
-    shadow-violet-900/20
-  "
-                > */}
+                {/* Main Header */}
                 <div
                     className="
-    flex items-center justify-between h-16 px-2
+                flex
+                h-14
+                items-center
+                justify-between
+                rounded-2xl
+                border
+                border-white/10
+                bg-slate-950/80
+                px-3
+                shadow-lg
+                shadow-black/20
+                backdrop-blur-xl
 
-    md:px-6
-    md:rounded-3xl
-    md:border md:border-white/15
-    md:bg-black/30
-    md:backdrop-blur-2xl
-    md:shadow-2xl
-    md:shadow-violet-900/20
-  "
+                sm:h-16
+                sm:px-4
+
+                md:rounded-2xl
+                md:border-white/[0.12]
+                md:bg-slate-950/75
+                md:px-5
+                md:shadow-xl
+            "
                 >
+
                     {/* Logo */}
-                    {/* <NavLink
-                        to="/"
-                        className="flex items-center gap-3"
-                    > */}
-                    {/* <h1 className="text-3xl font-black tracking-tight text-white">
-                            Mini<span className="text-violet-400">Verse</span>
-                        </h1> */}
-                    {/* <img src={logo} alt="Logo" />
-                    </NavLink> */}
                     <NavLink
                         to="/"
-                        className="flex items-center"
+                        className="
+                    flex
+                    h-full
+                    shrink-0
+                    items-center
+                    transition-opacity
+                    hover:opacity-90
+                "
                     >
                         <img
                             src={logo}
-                            alt="MiniVerse Logo"
-                            className="h-17 w-auto sm:h-12 md:h-14 lg:h-16 object-contain"
+                            alt="MiniVerse"
+                            className="
+                        h-11
+                        w-auto
+                        object-contain
+
+                        sm:h-12
+                        md:h-13
+                        lg:h-14
+                    "
                         />
                     </NavLink>
 
-                    {/* Desktop Menu */}
-                    <nav className="hidden lg:flex items-center gap-2">
 
+                    {/* Desktop Navigation */}
+                    <nav
+                        className="
+                    hidden
+                    lg:flex
+                    items-center
+                    gap-1
+                    rounded-xl
+                    border
+                    border-white/[0.06]
+                    bg-white/[0.025]
+                    p-1
+                "
+                    >
                         {navLinks.map((item) => (
                             <NavLink
                                 key={item.path}
                                 to={item.path}
                                 className={({ isActive }) =>
-                                    `relative px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${isActive
-                                        ? "bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-xl shadow-violet-600/40"
-                                        : "text-gray-300 hover:text-white hover:bg-white/10"
-                                    }`
+                                    `
+                            relative
+                            rounded-lg
+                            px-4
+                            py-2
+                            text-sm
+                            font-medium
+                            transition-all
+                            duration-200
+
+                            ${isActive
+                                        ? `
+                                        bg-white/[0.10]
+                                        text-white
+                                        shadow-sm
+                                    `
+                                        : `
+                                        text-slate-400
+                                        hover:bg-white/[0.05]
+                                        hover:text-white
+                                    `
+                                    }
+                            `
                                 }
                             >
                                 {item.name}
                             </NavLink>
                         ))}
-
                     </nav>
 
-                    {/* Right Side */}
-                    <div className="flex items-center gap-3">
 
+                    {/* Right Side */}
+                    <div className="flex items-center gap-2">
+
+                        {/* Desktop User */}
                         <button
+                            type="button"
+                            aria-label="Account"
                             className="
-    hidden md:flex
-    h-11 w-11
-    items-center justify-center
-    rounded-full
-    border border-white/15
-    bg-white/10
-    backdrop-blur-xl
-    text-white
-    hover:bg-white/20
-    transition-all
-  "
+                        hidden
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-white/[0.04]
+                        text-slate-300
+                        transition-all
+                        duration-200
+
+                        hover:border-white/15
+                        hover:bg-white/[0.08]
+                        hover:text-white
+
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-violet-500/50
+
+                        md:flex
+                    "
                         >
-                            👤
+                            <User
+                                size={18}
+                                strokeWidth={1.8}
+                            />
                         </button>
 
-                        {/* Mobile Menu */}
+
+                        {/* Mobile / Tablet Menu */}
                         <button
+                            type="button"
                             onClick={() => setOpen(!open)}
-                            className="lg:hidden flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/40 backdrop-blur-xl text-white shadow-lg transition hover:bg-black/55"
+                            aria-label={
+                                open
+                                    ? "Close menu"
+                                    : "Open menu"
+                            }
+                            aria-expanded={open}
+                            className="
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-white/[0.04]
+                        text-slate-300
+                        shadow-sm
+                        transition-all
+                        duration-200
+
+                        hover:border-white/15
+                        hover:bg-white/[0.08]
+                        hover:text-white
+
+                        active:scale-95
+
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-violet-500/50
+
+                        lg:hidden
+                    "
                         >
-                            {open ? <X size={24} /> : <Menu size={24} />}
+                            {open ? (
+                                <X
+                                    size={20}
+                                    strokeWidth={1.8}
+                                />
+                            ) : (
+                                <Menu
+                                    size={20}
+                                    strokeWidth={1.8}
+                                />
+                            )}
                         </button>
 
                     </div>
-
                 </div>
 
-                {/* Mobile Menu */}
 
+                {/* Mobile / Tablet Navigation */}
                 <div
-                    className={`lg:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-96 mt-3" : "max-h-0"
-                        }`}
-                >
+                    className={`
+                overflow-hidden
+                transition-all
+                duration-300
+                ease-out
+                lg:hidden
 
-                    <div className="rounded-3xl border border-white/15 bg-black/40 backdrop-blur-2xl p-4 shadow-xl">
+                ${open
+                            ? "mt-2 max-h-[500px] opacity-100"
+                            : "max-h-0 opacity-0"
+                        }
+            `}
+                >
+                    <div
+                        className="
+                    rounded-2xl
+                    border
+                    border-white/10
+                    bg-slate-950/90
+                    p-2
+                    shadow-xl
+                    shadow-black/30
+                    backdrop-blur-2xl
+                "
+                    >
 
                         {navLinks.map((item) => (
-
                             <NavLink
                                 key={item.path}
                                 to={item.path}
                                 onClick={() => setOpen(false)}
                                 className={({ isActive }) =>
-                                    `block rounded-2xl px-4 py-3 mt-2 text-sm font-medium transition ${isActive
-                                        ? "bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white"
-                                        : "text-gray-300 hover:bg-white/10 hover:text-white"
-                                    }`
+                                    `
+                            flex
+                            items-center
+                            rounded-xl
+                            px-4
+                            py-3
+                            text-sm
+                            font-medium
+                            transition-all
+                            duration-200
+
+                            ${isActive
+                                        ? `
+                                        bg-gradient-to-r
+                                        from-violet-600/90
+                                        to-fuchsia-600/90
+                                        text-white
+                                        shadow-md
+                                        shadow-violet-900/20
+                                    `
+                                        : `
+                                        text-slate-400
+                                        hover:bg-white/[0.06]
+                                        hover:text-white
+                                    `
+                                    }
+                            `
                                 }
                             >
                                 {item.name}
                             </NavLink>
-
                         ))}
 
                     </div>
-
                 </div>
 
             </div>

@@ -40,40 +40,110 @@ const Summary = ({ expenses }) => {
     ];
 
     return (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+
             {cards.map((card, index) => (
                 <div
                     key={index}
-                    className={`
-            rounded-3xl
-            bg-gradient-to-r
-            ${card.bg}
-            p-6
-            text-white
-            shadow-xl
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:shadow-2xl
-          `}
+                    className="
+                group
+                relative
+                overflow-hidden
+                rounded-[20px]
+                border
+                border-white/[0.08]
+                bg-white/[0.035]
+                p-4
+                shadow-xl
+                shadow-black/20
+                backdrop-blur-xl
+                transition-all
+                duration-200
+                hover:-translate-y-0.5
+                hover:border-white/[0.12]
+                hover:bg-white/[0.05]
+            "
                 >
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <p className="text-white/80 text-sm">
+
+                    {/* Background Glow */}
+                    <div
+                        className={`
+                    pointer-events-none
+                    absolute
+                    -right-8
+                    -top-8
+                    h-24
+                    w-24
+                    rounded-full
+                    opacity-10
+                    blur-2xl
+                    ${card.bg}
+                `}
+                    />
+
+                    <div className="
+                relative
+                flex
+                items-center
+                justify-between
+                gap-3
+            ">
+
+                        {/* Content */}
+                        <div className="min-w-0">
+
+                            <p className="
+                        text-[10px]
+                        font-medium
+                        text-slate-500
+                        sm:text-xs
+                    ">
                                 {card.title}
                             </p>
 
-                            <h2 className="mt-2 text-3xl font-bold">
+                            <h2 className="
+                        mt-1
+                        truncate
+                        text-xl
+                        font-extrabold
+                        tracking-tight
+                        text-white
+                        sm:text-2xl
+                    ">
                                 {card.value}
                             </h2>
+
                         </div>
 
-                        <div className="rounded-2xl bg-white/20 p-4 backdrop-blur-sm">
+
+                        {/* Icon */}
+                        <div
+                            className={`
+                        flex
+                        h-10
+                        w-10
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-[13px]
+                        border
+                        border-white/[0.08]
+                        bg-white/[0.05]
+                        backdrop-blur-xl
+                        transition
+                        duration-200
+                        group-hover:scale-105
+                        ${card.text || "text-violet-400"}
+                    `}
+                        >
                             {card.icon}
                         </div>
+
                     </div>
+
                 </div>
             ))}
+
         </div>
     );
 };

@@ -18,6 +18,7 @@ import ExpenseTracker from "./pages/ExpenseTracker/ExpenseTracker";
 
 // Money Tracker
 import MoneyTracker from "./pages/MoneyTracker/MoneyTracker";
+import MoneyRecoveryTracker from "./pages/Money-Recovery-Tracker/MoneyRecoveryTracker";
 
 const App = () => {
   const [showIntro, setShowIntro] = useState(false);
@@ -62,6 +63,7 @@ const App = () => {
         <Route path="/right-wrong-grid" element={<RightWrongGrid />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/policy" element={<Policy />} />
+        <Route path="/money-recovery-tracker" element={<MoneyRecoveryTracker />} />
         {/* OLD Expense Tracker */}
         <Route
           path="/expense-tracker"
